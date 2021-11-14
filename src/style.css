@@ -1,3 +1,22 @@
 h1 {
     color: aqua;
 }
+
+#prec,
+#humi,
+#wind {
+    color: red;
+}
+
+#celcius,
+#fahrenheit {
+    color: green;
+}
+
+#openSource {
+    text-decoration: none;
+}
+
+form {
+    margin: 100px 0px 0px 0px;
+}
