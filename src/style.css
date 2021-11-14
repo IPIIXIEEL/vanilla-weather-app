@@ -32,7 +32,6 @@ li {
 
 #celcius,
 #fahrenheit {
-    color: green;
     position: relative;
     bottom: 20px;
     text-decoration: none;
@@ -63,4 +62,13 @@ li {
     float: left;
     position: relative;
     top: 10px;
+}
+
+.tempWeather .active {
+    color: black;
+    cursor: default;
+}
+
+.tempWeather .active:hover {
+    text-decoration: none;
 }

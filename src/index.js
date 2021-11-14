@@ -32,7 +32,10 @@ function showWeather(response) {
     let humiElement = document.querySelector("#humi");
     let dtElement = document.querySelector("#dt");
     let iconImage = document.querySelector("#icon");
-    temperatureElement.innerHTML = Math.round(response.data.main.temp);
+
+    celciusTemp = response.data.main.temp;
+
+    temperatureElement.innerHTML = Math.round(celciusTemp);
     cityElement.innerHTML = response.data.name;
     descriptionElement.innerHTML = response.data.weather[0].description;
     windElement.innerHTML = `${Math.round(response.data.wind.speed)}km/h`;
@@ -58,10 +61,32 @@ function handleSubmit(event) {
     search(cityInputElement.value);
 }
 
+function showF(event) {
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#temp");
+    //change active link
+    celciusLink.classList.remove("active");
+    fahrenheitLink.classList.add("active");
+    let tempF = (celciusTemp * 9) / 5 + 32;
+    temperatureElement.innerHTML = Math.round(tempF);
+}
+
+function showC(event) {
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#temp");
+    //change active link
+    fahrenheitLink.classList.remove("active");
+    celciusLink.classList.add("active");
+    temperatureElement.innerHTML = Math.round(celciusTemp);
+}
+
+let celciusTemp = null;
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-//let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-//let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
-//axios.get(url).then(showWeather);
-//console.log(cityInputElement.value);
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", showF);
+
+let celciusLink = document.querySelector("#celcius");
+celciusLink.addEventListener("click", showC);
