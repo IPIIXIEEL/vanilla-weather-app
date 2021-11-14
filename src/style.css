@@ -13,6 +13,7 @@ form {
 li {
     margin: 0;
     padding: 0;
+    text-transform: capitalize;
 }
 
 .weatherInterface {
@@ -40,6 +41,7 @@ li {
 
 #openSource {
     text-decoration: none;
+    margin-top: 1px;
 }
 
 .footer {
