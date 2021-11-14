@@ -32,8 +32,33 @@ li {
 #celcius,
 #fahrenheit {
     color: green;
+    position: relative;
+    bottom: 20px;
+    text-decoration: none;
+    font-size: 14px;
 }
 
 #openSource {
     text-decoration: none;
+}
+
+.footer {
+    max-width: 600px;
+    margin: auto;
+    line-height: 1;
+}
+
+.tempWeather img {
+    margin-right: 10px;
+}
+
+#temp {
+    font-size: 50px;
+}
+
+#icon {
+    width: 50px;
+    float: left;
+    position: relative;
+    top: 10px;
 }
