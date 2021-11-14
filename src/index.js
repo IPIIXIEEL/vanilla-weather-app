@@ -25,8 +25,6 @@ function formatDate(timestamp) {
 }
 
 function showWeather(response) {
-    console.log(response.data);
-    console.log(response.data.main.temp);
     let temperatureElement = document.querySelector("#temp");
     let cityElement = document.querySelector("#city");
     let descriptionElement = document.querySelector("#description");
@@ -39,7 +37,6 @@ function showWeather(response) {
     windElement.innerHTML = `${Math.round(response.data.wind.speed)}km/h`;
     humiElement.innerHTML = `${response.data.main.humidity}%`;
     dtElement.innerHTML = formatDate(response.data.dt * 1000);
-    console.log(response.data);
 }
 
 let apiKey = "3332c3356f67e41032d8159fde794731";
